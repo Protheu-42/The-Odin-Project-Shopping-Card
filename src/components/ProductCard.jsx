@@ -28,6 +28,8 @@ function ProductCard({ product, addToCart }) {
         <input
           type="number"
           value={quantity}
+          name="quantity"
+          aria-label="quantity"
           onChange={(e) => SetQuantity(e.target.value)}
         />
         <button onClick={() => addOrSubQuantity("+")}>+</button>
