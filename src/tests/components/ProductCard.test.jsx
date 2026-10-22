@@ -25,7 +25,6 @@ describe("Does correctly render API info", () => {
   });
 
   it("subtract operations", async () => {
-    const addToCart = vi.fn();
     const user = userEvent.setup();
 
     render(<ProductCard product={PRODUCT} />);

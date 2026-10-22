@@ -33,7 +33,19 @@ function ProductCard({ product, addToCart }) {
           onChange={(e) => SetQuantity(e.target.value)}
         />
         <button onClick={() => addOrSubQuantity("+")}>+</button>
-        <button onClick={addToCart}>Add to Cart</button>
+        <button
+          onClick={() =>
+            addToCart(
+              product.id,
+              product.title,
+              product.description,
+              product.price,
+              quantity,
+            )
+          }
+        >
+          Add to Cart
+        </button>
       </div>
     </li>
   );

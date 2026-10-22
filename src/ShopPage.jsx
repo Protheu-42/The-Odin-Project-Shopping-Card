@@ -1,12 +1,10 @@
 import ProductCard from "./components/ProductCard";
 import useLoadProducts from "./components/useLoadProducts";
+import useCart from "./components/Cart";
 
 function ShopPage() {
+  const [cart, addToCart] = useCart();
   const { productsList, error, loading } = useLoadProducts();
-
-  function addToCart() {
-    console.log("WIP");
-  }
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>A network error was encountered</p>;
@@ -16,7 +14,7 @@ function ShopPage() {
       <h2>I'm a Shop Page</h2>
       <ul>
         {productsList.map((item) => (
-          <ProductCard product={item} addToCart={addToCart} />
+          <ProductCard key={item.id} product={item} addToCart={addToCart} />
         ))}
       </ul>
     </>
