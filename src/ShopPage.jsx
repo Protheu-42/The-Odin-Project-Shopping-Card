@@ -1,9 +1,9 @@
 import ProductCard from "./components/ProductCard";
 import useLoadProducts from "./components/useLoadProducts";
-import useCart from "./components/Cart";
+import { useOutletContext } from "react-router";
 
 function ShopPage() {
-  const { cart, addToCart } = useCart();
+  const [cart, addToCart] = useOutletContext();
   const { productsList, error, loading } = useLoadProducts();
 
   if (loading) return <p>Loading...</p>;
