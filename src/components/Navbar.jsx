@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-function Navbar() {
+function Navbar({ cart }) {
   return (
     <>
       <div>
@@ -14,6 +14,7 @@ function Navbar() {
           <li>
             <Link to="CartPage">Cart</Link>
           </li>
+          <li>ShoppingCart: {cart}</li>
         </ul>
       </div>
     </>

@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar cart={cart.length} />
       <h1>Hello World</h1>
       <Outlet context={[cart, addToCart]} />
     </>
