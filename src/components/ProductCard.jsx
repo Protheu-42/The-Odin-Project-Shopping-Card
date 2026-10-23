@@ -38,6 +38,7 @@ function ProductCard({ product, addToCart }) {
             addToCart(
               product.id,
               product.title,
+              product.image,
               product.description,
               product.price,
               quantity,

@@ -3,9 +3,10 @@ import { useState } from "react";
 function useCart() {
   const [cart, setCart] = useState([]);
 
-  function addToCart(id, title, description, price, quantity) {
+  function addToCart(id, title, image, description, price, quantity) {
     const product = {
       id: id,
+      image: image,
       title: title,
       description: description,
       price: price,
@@ -16,7 +17,7 @@ function useCart() {
     console.log(cart);
   }
 
-  return [cart, addToCart];
+  return { cart, addToCart };
 }
 
 export default useCart;
