@@ -1,5 +1,15 @@
+import { useOutletContext } from "react-router";
+
 function CartPage() {
-  return <h2>I'm a Cart Page</h2>;
+  const [cart, addToCart] = useOutletContext();
+
+  return (
+    <>
+      {cart.map((item) => (
+        <p>{item.title}</p>
+      ))}
+    </>
+  );
 }
 
 export default CartPage;
