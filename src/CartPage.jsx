@@ -1,4 +1,5 @@
 import { useOutletContext } from "react-router";
+import CartProduct from "./components/CartProduct";
 
 function CartPage() {
   const [cart, addToCart] = useOutletContext();
@@ -6,7 +7,7 @@ function CartPage() {
   return (
     <>
       {cart.map((item) => (
-        <p>{item.title}</p>
+        <CartProduct key={item.id} product={item} />
       ))}
     </>
   );
