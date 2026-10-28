@@ -2,12 +2,18 @@ import { useOutletContext } from "react-router";
 import CartProduct from "./components/CartProduct";
 
 function CartPage() {
-  const [cart, addToCart] = useOutletContext();
+  const [cart, addToCart, removeFromCart, setQuantity] = useOutletContext();
 
   return (
     <>
-      {cart.map((item) => (
-        <CartProduct key={item.id} product={item} />
+      {cart.map((item, index) => (
+        <CartProduct
+          key={index}
+          index={index}
+          product={item}
+          removeFromCart={removeFromCart}
+          setQuantity={setQuantity}
+        />
       ))}
     </>
   );
