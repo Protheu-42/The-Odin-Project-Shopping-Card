@@ -1,0 +1,38 @@
+.shopPage {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 0.7fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "featured main side"
+    "featured secondary side";
+  gap: 1rem;
+  height: 600px;
+}
+
+.container > div {
+  background-color: var(--color-surface);
+  border-radius: 12px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.featured {
+  grid-area: featured;
+}
+
+.main {
+  grid-area: main;
+}
+
+.secondary {
+  grid-area: secondary;
+}
+
+.side {
+  grid-area: side;
+}
