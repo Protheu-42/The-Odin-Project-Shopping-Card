@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import styles from "./Navbar.module.css";
 
 function Navbar({ cart }) {
   return (
@@ -6,15 +7,21 @@ function Navbar({ cart }) {
       <div>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link className={styles.link} to="/">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="ShopPage">Shop</Link>
+            <Link className={styles.link} to="ShopPage">
+              Shop
+            </Link>
           </li>
           <li>
-            <Link to="CartPage">Cart</Link>
+            <Link className={styles.link} to="CartPage">
+              Cart
+            </Link>
           </li>
-          <li>ShoppingCart: {cart}</li>
+          <li> 🛒: {cart}</li>
         </ul>
       </div>
     </>
