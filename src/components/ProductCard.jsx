@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./ProductCard.module.css";
 
 function ProductCard({ product, addToCart }) {
   const [quantity, SetQuantity] = useState(0);
@@ -16,14 +17,14 @@ function ProductCard({ product, addToCart }) {
   }
 
   return (
-    <li key={product.id}>
-      <img src={product.image} alt={product.title} />
-      <div>
+    <li className={styles.card} key={product.id}>
+      <img className={styles.img} src={product.image} alt={product.title} />
+      <div className={styles.content}>
         <div>{product.title}</div>
         <div>{product.description}</div>
-        <div>{product.price}</div>
+        <div>${product.price}</div>
       </div>
-      <div>
+      <div className={styles.buttons}>
         <button onClick={() => addOrSubQuantity("-")}>-</button>
         <input
           type="number"

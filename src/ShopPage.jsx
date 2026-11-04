@@ -1,6 +1,7 @@
 import ProductCard from "./components/ProductCard";
 import useLoadProducts from "./components/useLoadProducts";
 import { useOutletContext } from "react-router";
+import styles from "./ShopPage.module.css";
 
 function ShopPage() {
   const [cart, addToCart] = useOutletContext();
@@ -11,8 +12,7 @@ function ShopPage() {
 
   return (
     <>
-      <h2>I'm a Shop Page</h2>
-      <ul>
+      <ul className={styles.container}>
         {productsList.map((item) => (
           <ProductCard key={item.id} product={item} addToCart={addToCart} />
         ))}

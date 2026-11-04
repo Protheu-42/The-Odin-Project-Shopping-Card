@@ -1,0 +1,48 @@
+.card {
+  border: 1px black solid;
+  border-radius: var(--radius-card);
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  width: 70vw;
+  padding: var(--space-2);
+  background-color: (--color-surface);
+}
+
+.img {
+  width: 70%;
+  justify-self: center;
+  align-self: center;
+}
+
+.buttons {
+  grid-column: span 2;
+  align-self: center;
+  gap: 12px;
+  background-color: var(--color-surface);
+}
+
+.buttons > button {
+  border-radius: var(--radius-button);
+}
+
+.buttons > input {
+  margin: var(--space-1);
+}
+
+.buttons > button:hover {
+  background-color: var(--color-accent);
+  font-weight: bold;
+  color: white;
+}
+
+.buttons > button:last-child {
+  margin: 5px;
+}
+
+.content > :first-child {
+  font-weight: bold;
+}
+
+.content > :last-child {
+  font-weight: bold;
+}
